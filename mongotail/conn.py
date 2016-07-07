@@ -83,7 +83,7 @@ def connect(address, username=None, password=None, auth_database=None):
     """
     host,  port, dbname = get_host_port_db(address)
     try:
-        client = MongoClient(host=host, port=port)
+        client = MongoClient(host=host, port=port, ssl=True)
     except Exception as e:
         error("Error trying to connect: %s" % str(e), ECONNREFUSED)
 
